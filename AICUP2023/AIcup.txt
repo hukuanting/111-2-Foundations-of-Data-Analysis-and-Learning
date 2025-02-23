@@ -1,0 +1,22 @@
+Document retrieval
+
+1.找出noun phrases
+2.從Wiki API中取出和NP相符合的頁面名稱
+3.保留出現在句子index最靠前的五篇文章
+  作為相關文章
+
+改的地方：return多少個or改變選term的方法
+
+Sentence Retrieval
+1.從相關文章提取出相關句子作為證據句
+2.claim和句子丟入bert，做二分類訓練，判斷證據句or非證據句
+
+改的地方：Top_N 和 Document retrieval 設定相同、設定negative ratio(因為positive和negative資料不平衡)、model超參數
+
+claim verification
+1.證據句 and claim 丟到BERT判斷支持、反對或資訊不足
+
+改的地方：超參數
+
+Sentence Retrieval 和 claim verification的input有很大的調整空間
+
